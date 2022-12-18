@@ -1,0 +1,9 @@
+footer{
+    color: white;
+    padding: 7px 0;
+    width: 100%;
+    bottom: 0;
+    position: fixed;
+    height: 5vh;
+    font-family: 'Poppins', sans-serif;
+  }

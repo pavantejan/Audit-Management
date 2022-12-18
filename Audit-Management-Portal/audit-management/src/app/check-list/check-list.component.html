@@ -1,0 +1,54 @@
+<!-- <app-header [component]="status"></app-header> -->
+<app-header></app-header>
+
+
+<div class="container">
+    <div class="card mt-1">
+        <div class="card-body text-center">
+
+            <!-- <h4 class="card-title text-center"> Select Audit Type :</h4> -->
+
+            <!-- <div class="alert alert-danger text-center" *ngIf="auditType.length>0">{{ message }}</div> -->
+
+            <strong><label for="auditType">Select Audit Type : &nbsp;</label></strong>
+            <select name="auditType" id="auditType" [(ngModel)]="auditType">
+                <option value="">Select</option>
+                <option value="Internal">Internal</option>
+                <option value="SOX">SOX</option>
+            </select>
+
+            <hr>
+
+            <button type="submit" class="btn btn-primary" (click)="getQuestions()" [disabled]="auditType===''">Questions</button>
+            
+            <!-- <button type="submit" class="btn btn-primary" (click)="logout()">Logout</button> -->
+
+        </div>
+    </div>
+</div>
+
+<div class="container" *ngIf="questions.length>0">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th> Question </th>
+                <th> Choice </th>
+                <th> Response </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let question of questions;let i=index">
+                <td name="question">{{ question.questions }}</td>
+                <td name="YesorNoResponse">
+                    <input type="button" value="YES" class="btn btn-outline-success mx-4 px-4" (click)="responseYes(i)">
+                    <input type="button" value="NO" class="btn btn-outline-danger mx-4 px-4" (click)="responseNo(i)">
+                </td>
+                <td name="response">{{ question.response }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="text-center">
+        <input type="submit" (click)="onSubmit()" value="Submit" class="btn btn-success mx-4 px-4">
+    </div>   
+</div>
+
