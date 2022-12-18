@@ -1,0 +1,62 @@
+<app-header></app-header>
+
+
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <div class="card-title text-center">
+                <h2>Audit Result</h2>
+            </div>
+            <hr>
+            <div *ngIf="status.length>0">
+                <h3>Project Information -</h3>
+                <br>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th> Audit-Id </th>
+                            <th> Project-Name </th>
+                            <th> Project-Manager-Name </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td> {{ auditResponse.auditId }} </td>
+                            <td> {{ auditResponse.projectName }} </td>
+                            <td> {{ auditResponse.projectManagerName }} </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <br>
+            <hr>
+            <div *ngIf="status.length>0">
+                <h3>Audit Details -</h3>
+                <br>
+                <table class="table" *ngIf="status.length>0">
+                    <thead>
+                        <tr>
+                            <!-- <th> Status Dated </th> -->
+                            <th> Project-Execution-Status </th>
+                            <th> Remedial-Action-Duration </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <!-- <td> {{ auditResponse.creationDateAndTime }} </td> -->
+                            <td class="status-btn btn" [style.background]="status" disabled> {{
+                                auditResponse.projectExecutionStatus }} </td>
+                            <td> {{ auditResponse.remedialActionDuration }} </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+    <br>
+    <div class="text-center">
+        <input type="submit" (click)="backToChecklist()" value="Back to Checklist"
+            class="btn btn-warning mx-4 px-4">
+    </div>
+</div>

@@ -1,0 +1,49 @@
+.status-btn{
+    background-color: #ff0000;
+    width: 100px;
+    height: 40px;
+    border-radius: 8px;
+    color: white;
+}
+
+.card {
+    max-width: 800px;
+    margin: auto;
+        
+    
+    /* background-color:aliceblue; */
+  }
+.container {
+    padding-top: 3%;
+}
+.form-control, .input-group-text {
+    min-height: 40px;
+    border-radius: 3px;
+}
+
+.btn {        
+    font-size: 15px;
+    font-weight: bold;
+}
+
+table{
+    width: 100%;
+}
+
+
+table,tr,th{
+    border-collapse: collapse;
+    text-align: center;
+    /* height: 50px;     */
+
+  }
+th{
+
+    background-color:aliceblue;
+    width: 200px;
+
+}
+
+td{
+    /* background-color: aquamarine; */
+}

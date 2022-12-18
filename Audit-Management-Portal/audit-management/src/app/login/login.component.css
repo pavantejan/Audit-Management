@@ -1,0 +1,19 @@
+.card {
+    max-width: 600px;
+    margin: auto;
+        
+    
+    /* background-color:aliceblue; */
+  }
+.container {
+    padding-top: 3%;
+}
+.form-control, .input-group-text {
+    min-height: 40px;
+    border-radius: 3px;
+}
+
+.btn {        
+    font-size: 15px;
+    font-weight: bold;
+}

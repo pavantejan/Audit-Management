@@ -1,0 +1,43 @@
+<app-header></app-header>
+
+<div class="container ">
+    <div class="card w-25 mt-5">
+      <div class="card-body">
+  
+        <h3 class="card-title text-center">Sign in</h3>
+        
+        <hr>
+  
+        <!-- if token is not generated and exception is raised then below msg should be invoked -->
+        <!-- <p class="text-success text-center">message - when password entered is incorrect.</p> -->
+        <br *ngIf="message.length==0">
+        <div class="alert alert-danger text-center" *ngIf="message.length>0">{{ message }}</div>
+        
+  
+        <form (ngSubmit)="logIn()">
+  
+          <div class="form-group">
+            <div class="input-group">
+              <div class="input-group-prepend"><span class="input-group-text"><i class="fa fa-user"></i></span></div>
+              <input type="text" class="form-control" [(ngModel)]="username" placeholder="Enter username" name="username" id="username">
+            </div>
+          </div>
+          <br>
+          <div class="form-group">
+            <div class="input-group">
+              <div class="input-group-prepend"><span class="input-group-text"><i class="fa fa-lock"></i></span></div>
+              <input type="password" class="form-control" [(ngModel)]="password" placeholder="Enter password" name="password" id="password">
+            </div>
+          </div>
+          <br>
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary" [disabled]="username==='' || password===''">Login</button>
+          </div>
+  
+          
+  
+        </form>
+      </div>
+    </div>
+  </div>
+  
